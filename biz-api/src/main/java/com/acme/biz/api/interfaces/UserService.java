@@ -12,7 +12,7 @@ import java.util.Map;
  * 用户登录服务接口 (Open feign. Dubbo 等公用)
  * @author: wuhao
  * @time: 2025/3/4 15:40
- * @Deprecated 接口不再使用,请使用 {@link UserLoginService } 或者 {@link UseRegistrationService}
+ * @Deprecated 接口不再使用,请使用 {@link UserLoginService } 或者 {@link UserRegistrationService}
  */
 @FeignClient("${user.service.name}")
 @RequestMapping("/user")

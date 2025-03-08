@@ -1,9 +1,7 @@
 package com.acme.biz.api;
 
 import org.springframework.util.MultiValueMap;
-import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import java.util.Map;
 
 /**

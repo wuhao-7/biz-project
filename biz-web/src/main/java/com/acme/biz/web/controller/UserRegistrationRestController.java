@@ -1,9 +1,8 @@
 package com.acme.biz.web.controller;
 
-import com.acme.biz.api.ApiBase;
 import com.acme.biz.api.ApiRequest;
 import com.acme.biz.api.ApiResponse;
-import com.acme.biz.api.interfaces.UseRegistrationRestService;
+import com.acme.biz.api.interfaces.UserRegistrationRestService;
 import com.acme.biz.api.model.User;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @time: 2025/3/6 17:24
  */
 @RestController
-public class UseRegistrationController implements UseRegistrationRestService {
+public class UserRegistrationRestController implements UserRegistrationRestService {
     @Override
-    public ApiResponse<Boolean> registerUser(@Validated  User user) {
+    public ApiResponse<Boolean> registerUser(User user) {
         return ApiResponse.ok(Boolean.TRUE);
     }
 

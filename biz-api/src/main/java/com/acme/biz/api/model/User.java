@@ -1,9 +1,6 @@
 package com.acme.biz.api.model;
 
 
-import org.springframework.validation.annotation.Validated;
-
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -13,11 +10,10 @@ import javax.validation.constraints.NotNull;
 public class User {
 
     @NotNull
-    private  Long id;
+    private Long id;
 
     @NotNull
-    @NotEmpty
-    private  String name;
+    private String name;
 
 
     public Long getId() {
