@@ -4,6 +4,7 @@ import com.acme.biz.api.ApiResponse;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.validation.ValidationException;
 
@@ -11,7 +12,7 @@ import javax.validation.ValidationException;
  * @author: wuhao
  * @time: 2025/3/6 16:34
  */
-@ControllerAdvice
+@RestControllerAdvice
 public class ExceptionHandleConfiguration {
     @ExceptionHandler(ValidationException.class)
     public ApiResponse<Void> onValidationException(ValidationException e){

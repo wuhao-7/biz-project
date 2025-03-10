@@ -12,11 +12,21 @@ import java.util.Map;
  * @time: 2025/3/6 14:17
  * @param <T>
  */
-public class ApiResponse <T> extends ApiBase<T> {
+public class ApiResponse <T>  {
+
+    private T body;
 
     private int code;
 
     private String message;
+
+    public T getBody() {
+        return body;
+    }
+
+    public void setBody(T body) {
+        this.body = body;
+    }
 
     public int getCode() {
         return code;

@@ -1,4 +1,4 @@
-package com.acme.biz.web.controller;
+package com.acme.biz.web.mvc.controller;
 
 import com.acme.biz.api.ApiRequest;
 import com.acme.biz.api.ApiResponse;
