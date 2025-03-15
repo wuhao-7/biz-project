@@ -33,8 +33,11 @@ public class ApiResponseHandlerMethodReturnValueHandle implements HandlerMethodR
     @Override
     public void handleReturnValue(Object returnValue, MethodParameter returnType, ModelAndViewContainer mavContainer, NativeWebRequest webRequest) throws Exception {
         mavContainer.setRequestHandled(true);
-        //returnvalue  =  pojo
         ApiResponse inputMessage =  ApiResponse.ok(returnValue);
+
+        HttpServletResponse response = (HttpServletResponse)webRequest.getNativeResponse();
+        response.addHeader("v","3");
+        //returnvalue  =  pojo
         ServletServerHttpResponse outputMessage = createOutputMessage(webRequest);
         converters.write(inputMessage, MediaType.APPLICATION_JSON,outputMessage);
     }
