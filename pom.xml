@@ -34,7 +34,8 @@
 		<module>biz-data</module>
 		<module>biz-core</module>
 		<module>biz-dependencies</module>
-	</modules>
+        <module>biz-client</module>
+    </modules>
 
 	<dependencyManagement>
 		<dependencies>

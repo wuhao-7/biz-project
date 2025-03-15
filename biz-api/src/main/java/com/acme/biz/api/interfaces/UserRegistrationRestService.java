@@ -19,14 +19,15 @@ import javax.validation.Valid;
  * @time: 2025/3/4 15:40
  */
 @FeignClient("${user-registration.rest.service.name}")
-@RequestMapping("/api/user")
 @DubboService
 public interface UserRegistrationRestService {
 
-    @PostMapping("/register/v1")
-    ApiResponse<Boolean> registerUser(@RequestBody @Validated @Valid User user);
 
-    @PostMapping("/register/v2")
-    ApiResponse<Boolean> registerUser(@RequestBody @Validated @Valid ApiRequest<User> userApiRequest);
+    @Deprecated
+    @PostMapping(path = "/user/register", produces = "application/json;v=1")
+    ApiResponse<Boolean> registerUser(@RequestBody @Validated  ApiRequest<User> userApiRequest);
+
+    @PostMapping(path = "/user/register", produces = "application/json;v=2")
+    ApiResponse<Boolean> registerUser(@RequestBody @Validated  User user);
 
 }
