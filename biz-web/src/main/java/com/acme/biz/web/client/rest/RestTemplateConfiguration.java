@@ -26,7 +26,7 @@ import java.util.List;
 public class RestTemplateConfiguration {
 
     @Bean
-    public ClientHttpRequestInterceptor validatingClientHttpRequestInterceptor(Validator validator){
+    public ClientHttpRequestInterceptor validaingClientHttpRequestInterceptor(Validator validator){
         return new ValidatingClientHttpRequestInterceptor(validator,mappingJackson2HttpMessageConverter());
     }
 

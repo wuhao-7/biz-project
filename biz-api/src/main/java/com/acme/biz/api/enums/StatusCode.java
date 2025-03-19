@@ -7,7 +7,12 @@ package com.acme.biz.api.enums;
  * @see org.springframework.http.HttpStatus
  */
 public enum StatusCode {
-    OK (0,"OK"),
+    OK (0,"OK"){
+        @Override
+        public String getMessage() {
+            return "OK";
+        }
+    },
     FAILED(-1,"Failed"),
     CONTINUE(1,"{status-code.continue}");
 
