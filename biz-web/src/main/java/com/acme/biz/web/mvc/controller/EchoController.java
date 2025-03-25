@@ -29,6 +29,7 @@ public class EchoController {
     public ApiResponse<String> restTemplateCall(@PathVariable String name){
         String url = "http://127.0.0.1:{port}/echo/user";
         User user = new User();
+//        user.setId(1l);
         user.setName(name);
         ApiResponse apiResponse = restTemplate.postForObject(url,user,ApiResponse.class,port);
         return apiResponse;

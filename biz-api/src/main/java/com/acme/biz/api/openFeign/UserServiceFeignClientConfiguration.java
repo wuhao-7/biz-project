@@ -1,5 +1,6 @@
 package com.acme.biz.api.openFeign;
 
+import com.acme.biz.api.fault.tolerance.BulkHeadRequestInterceptor;
 import feign.codec.Decoder;
 import feign.optionals.OptionalDecoder;
 import org.springframework.beans.factory.ObjectFactory;
@@ -32,6 +33,10 @@ public class UserServiceFeignClientConfiguration {
     @ConditionalOnMissingBean
     public Decoder feignDecoder(ObjectProvider<HttpMessageConverterCustomizer> customizers) {
         return new ApiResponseDecoder(new ResponseEntityDecoder(new SpringDecoder(messageConverters, customizers)));
+    }
+    @Bean
+    public BulkHeadRequestInterceptor bulkHeadRequestInterceptor(){
+        return new BulkHeadRequestInterceptor();
     }
 
 }

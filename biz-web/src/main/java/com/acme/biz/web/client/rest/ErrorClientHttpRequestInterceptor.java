@@ -1,5 +1,6 @@
 package com.acme.biz.web.client.rest;
 
+import com.acme.biz.api.ApiResponse;
 import org.springframework.boot.web.servlet.filter.OrderedRequestContextFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpHeaders;
@@ -9,6 +10,7 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.http.converter.HttpMessageConverter;
 
+import javax.validation.ValidationException;
 import javax.validation.Validator;
 import java.io.IOException;
 
@@ -23,11 +25,10 @@ public class ErrorClientHttpRequestInterceptor implements ClientHttpRequestInter
         HttpHeaders headers = request.getHeaders();
         Boolean valid = "true".equals(headers.getFirst("validation-result"));
         if(!valid){
-
-            //TODO
+            throw new ValidationException("valid fail!");
 
         }
-        return null;
+        return execution.execute(request, body);
     }
 
     @Override
