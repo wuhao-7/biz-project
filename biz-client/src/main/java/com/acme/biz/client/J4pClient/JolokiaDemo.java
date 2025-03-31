@@ -1,8 +1,6 @@
 package com.acme.biz.client.J4pClient;
 
-import org.jolokia.client.J4pClient;
-import org.jolokia.client.request.J4pReadRequest;
-import org.jolokia.client.request.J4pReadResponse;
+
 
 import java.util.Map;
 
@@ -10,7 +8,7 @@ import java.util.Map;
  *
  *
  * 使用jdk 11 启动
- * @see  J4pClient
+// * @see  J4pClient
  * @author: wuhao
  *
  */
