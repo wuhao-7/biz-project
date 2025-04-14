@@ -1,6 +1,7 @@
 package com.acme.biz.api.openFeign;
 
 import com.acme.biz.api.fault.tolerance.BulkHeadRequestInterceptor;
+import com.acme.biz.api.micrometer.fegin.FeignCallCounterMetrics;
 import feign.codec.Decoder;
 import feign.optionals.OptionalDecoder;
 import org.springframework.beans.factory.ObjectFactory;
@@ -38,5 +39,6 @@ public class UserServiceFeignClientConfiguration {
     public BulkHeadRequestInterceptor bulkHeadRequestInterceptor(){
         return new BulkHeadRequestInterceptor();
     }
+
 
 }

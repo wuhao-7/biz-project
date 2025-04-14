@@ -1,5 +1,6 @@
 package com.acme.biz.client.web.openfeign;
 
+import com.acme.biz.api.feign.config.DefaultFeignClientsConfiguration;
 import com.acme.biz.api.interfaces.UserRegistrationService;
 import com.acme.biz.api.model.User;
 import com.acme.biz.client.loadBalancer.UserServiceLoadBalancerConfigruation;
@@ -25,7 +26,7 @@ import java.util.List;
  * @time: 2025/3/12 21:59
  */
 @EnableAutoConfiguration
-@EnableFeignClients(clients = UserRegistrationService.class)
+@EnableFeignClients(clients = UserRegistrationService.class,defaultConfiguration = DefaultFeignClientsConfiguration.class)
 @LoadBalancerClient(name = "user-service", configuration = UserServiceLoadBalancerConfigruation.class)
 public class FeignClientSpringBootBootstrap {
     public static void main(String[] args) {
