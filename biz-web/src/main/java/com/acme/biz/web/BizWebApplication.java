@@ -1,4 +1,5 @@
 package com.acme.biz.web;
+import com.acme.biz.api.micrometer.binder.servo.ServoMetrics;
 import com.acme.biz.web.servlet.Interceptor.ResourceBulkHeadInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -22,7 +23,10 @@ import java.util.List;
  */
 
 @ServletComponentScan
-@Import(ResourceBulkHeadInterceptor.class)
+@Import({
+        ResourceBulkHeadInterceptor.class,
+        ServoMetrics.class
+})
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableScheduling
